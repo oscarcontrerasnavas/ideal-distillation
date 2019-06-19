@@ -1,10 +1,10 @@
-from scraping import scraping
+from helpers.scraping import scrap_properties
 
 class Substance:
 
     def __init__(self, name):
         self.name = name
-        self.tag = name.lower().replace(' ', '')
+        self.tag = name.lower().replace(' ', '+')
         self.antoine = self.get_antoine()
 
     def get_vapor_pressure(self, temperature):
@@ -24,7 +24,7 @@ class Substance:
             'aria-label',
             'Antoine Equation Parameters'
         ]
-        table = scraping.scrap_properties(url, condition)
+        table = scrap_properties(url, condition)
 
         # Extract the rows from the table. Knowing what tags have an HTML table.
         # Also, knowing that the fist row with he table header does not have the
@@ -50,3 +50,4 @@ class Substance:
             coefficients.append([temperatures, A, B, C])
 
         return coefficients
+        
