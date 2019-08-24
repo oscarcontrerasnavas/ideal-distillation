@@ -4,25 +4,24 @@ from contextlib import closing
 from bs4 import BeautifulSoup
 
 
-def scrap_properties(url, condition):
-    """
-    Downloads the page and return the object that match with the specifications
-    given as parameters
-    """
-
-    # Fist check if the url exists and have any html.
+def get_html_bs4(url):
     response = simple_get(url)
 
     if response is not None:
-        html = BeautifulSoup(response, 'html.parser')
-        css_element = condition[0]
-        unique_property = condition[1]
-        property_value = condition[2]
-        return html.find(css_element, attrs={unique_property: property_value})
+        return BeautifulSoup(response, 'html.parser')
 
-    # Raise an exception if we failed to get any data from the url
     raise Exception('Error retrieving contents at {}'.format(url))
 
+
+def scrap_properties(html_bs4, css_element, unique_property=None,
+                     property_value=None):
+
+    # Check given parameters
+    if unique_property is None or property_value is None:
+        return html_bs4.select_one(css_element)
+    else:
+        return html_bs4.find(css_element,
+                             attrs={unique_property: property_value})
 
 
 def simple_get(url):
@@ -42,6 +41,7 @@ def simple_get(url):
     except RequestException as e:
         log_error('Error during requests to {0} : {1}'.format(url, str(e)))
         return None
+
 
 def is_good_response(resp):
     """

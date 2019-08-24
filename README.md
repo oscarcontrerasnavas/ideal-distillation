@@ -1,10 +1,21 @@
-# Ideal distillation
+# Simple Flash Tank (Distillation)
 
-For the process of coding this peace of software first it was necessary to
-review my knowledge in unit operations such as distillation. I first start with
-the ideal flash distillation which consists in a simple vessel with one inlets
-and two outlets, one at the top for the vapor phase and other at the bottom of
-the column for the liquid. The equipment receive and return _Streams_ objects
-which contain _substance_ objects within. Each one of this _substance_ represent
-real components of a current, such a water or alcohol.
+Flash Tanks are widely use in the industry to separate two-phase flow streams
+allowing both the vapor and the liquid continuing the process according to
+specific conditions for better performance or considering safety reasons. Some
+of the motives a flash tank is use for are within but not limited to the
+follow list.
 
+* Reduce pressure steam
+* Allow condensate
+* Purge a stream for bubbles
+* Basic separation previously a multistage distillation
+
+Rigorously talking, calculation of flash distillations are obtained using
+advanced modeling software and implementing well know mathematical models along
+with state of art experimental data. However, roughs calculation such as those
+made with ideal models and public domain values of some substances, is also
+important as a tool of fast decision making. Also this approach can help to
+understand the operation in an academical way. 
+
+**Note:** This file is incomplete and is subject of reviewing.
