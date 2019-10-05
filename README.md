@@ -24,6 +24,11 @@ concepts in real life.
 3. Stream: Represents stream lines, includes parameter of the stream and the
    substances transported.
 
+## External Libraries
+
+* [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+* [Numpy/Scipy](https://www.scipy.org/)
+
 ## Example.py File
 
 ``` Python
