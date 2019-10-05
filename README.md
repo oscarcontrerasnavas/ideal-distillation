@@ -1,21 +1,62 @@
 # Simple Flash Tank (Distillation)
 
-Flash Tanks are widely use in the industry to separate two-phase flow streams
-allowing both the vapor and the liquid continuing the process according to
-specific conditions for better performance or considering safety reasons. Some
-of the motives a flash tank is use for are within but not limited to the
-follow list.
+The present repository scrap data from the [NIST
+Webbook](https://webbook.nist.gov/) for Antoine constants
+and use them for calculating the vapor pressure and **K-values** for each of the
+components in a multicomponent stream line. An example file is included within
+and shows the general steps to solve a flash (and ideal) distillation problem.
 
-* Reduce pressure steam
-* Allow condensate
-* Purge a stream for bubbles
-* Basic separation previously a multistage distillation
+The mathematical background is explained in my [blog]()  and below this line a
+brief description of the modules.
 
-Rigorously talking, calculation of flash distillations are obtained using
-advanced modeling software and implementing well know mathematical models along
-with state of art experimental data. However, roughs calculation such as those
-made with ideal models and public domain values of some substances, is also
-important as a tool of fast decision making. Also this approach can help to
-understand the operation in an academical way. 
+## Parameter, Substance and Stream objects
 
-**Note:** This file is incomplete and is subject of reviewing.
+Trying to use the OOP the repository are made of Classes that represent real
+concepts in real life.
+
+1. Parameter: Represents process parameters as temperature, pressure and all
+   measurements that need units to be full described 
+
+2. Substance: Represents real substances like water, propanol etc... Some of the
+   methods allows user to obtain certain physical and chemical properties.
+
+3. Stream: Represents stream lines, includes parameter of the stream and the
+   substances transported.
+
+``` Python
+from streams.substance import Substance
+from streams.stream import Stream
+from streams.parameter import Parameter
+from opus.flash import Flash
+
+
+"""
+A flash chamber operating at 50°C and 200 kPa is separating 1000 kmol/h of a
+feed that is 30 mol% propane, 10 mol% n-butane, 15 mol% n-pentane and 45 mol%
+n-hexane. Find the product compositions and flow rates
+"""
+
+# Define substances
+propane = Substance('Propane')
+butane = Substance('Butane')
+pentane = Substance('Pentane')
+hexane = Substance('Hexane')
+substances = [propane, butane, pentane, hexane]
+composition = [0.3, 0.1, 0.15, 0.45]
+
+# Define Parameters
+temperature = Parameter('Temperature', 323, 'K')
+pressure = Parameter('Pressure', 200, 'kPa')
+flow_rate = Parameter('Mass Flow Rate', 1000,'kmol/h')
+
+#Define Streams
+inlet = Stream('Inlet', substances, flow_rate, composition, pressure, temperature)
+vapor = Stream('Vapor', substances)
+liquid = Stream('Liquid', substances)
+
+# Define a Flash
+flash = Flash('V-101', inlet, vapor, liquid)
+flash.solve()
+vapor = flash.vapor
+liquid = flash.liquid
+```
