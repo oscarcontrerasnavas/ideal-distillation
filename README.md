@@ -6,8 +6,9 @@ and use them for calculating the vapor pressure and **K-values** for each of the
 components in a multicomponent stream line. An example file is included within
 and shows the general steps to solve a flash (and ideal) distillation problem.
 
-The mathematical background is explained in my [blog]()  and below this line a
-brief description of the modules.
+The mathematical background is explained in my
+[blog](https://oscarcontrerasnavas.github.io/ideal-multicomponent-solver-and-maths/)
+and below this line a brief description of the modules.
 
 ## Parameter, Substance and Stream objects
 
@@ -22,6 +23,8 @@ concepts in real life.
 
 3. Stream: Represents stream lines, includes parameter of the stream and the
    substances transported.
+
+## Example.py File
 
 ``` Python
 from streams.substance import Substance
