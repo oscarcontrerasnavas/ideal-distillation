@@ -63,3 +63,7 @@ flash.solve()
 vapor = flash.vapor
 liquid = flash.liquid
 ```
+
+## Mathematical Background
+
+[Post in my blog](https://oscarcontrerasnavas.github.io/ideal-multicomponent-solver-and-maths/)
