@@ -29,7 +29,7 @@ concepts in real life.
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 * [Numpy/Scipy](https://www.scipy.org/)
 
-## Example.py File
+## main.py File
 
 ``` Python
 from streams.substance import Substance
@@ -68,6 +68,14 @@ flash.solve()
 vapor = flash.vapor
 liquid = flash.liquid
 ```
+
+### Results
+
+|*F* = 1000 kmol/h |*V* = 503.8 kmol/h |*L* = 496.2 kmol/h |
+|*z_propane* = 0.3 |*y_propane* = 0.534|*x_propane* = 0.062|
+|*z_butane* = 0.1  |*y_butane* = 0.142 |*x_butane* = 0.058 |
+|*z_pentane* = 0.15|*y_pentane* = 0.133|*x_pentane* = 0.168|
+|*z_hexane* = 0.45 |*y_hexane* = 0.191 |*x_hexane* = 0.713 |
 
 ## Mathematical Background
 
