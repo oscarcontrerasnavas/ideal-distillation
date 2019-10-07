@@ -71,6 +71,8 @@ liquid = flash.liquid
 
 ### Results
 
+|Feed              |Vapor              |Liquid             |
+|------------------|-------------------|-------------------|
 |*F* = 1000 kmol/h |*V* = 503.8 kmol/h |*L* = 496.2 kmol/h |
 |*z_propane* = 0.3 |*y_propane* = 0.534|*x_propane* = 0.062|
 |*z_butane* = 0.1  |*y_butane* = 0.142 |*x_butane* = 0.058 |
