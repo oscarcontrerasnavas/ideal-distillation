@@ -79,6 +79,13 @@ liquid = flash.liquid
 |*z_pentane* = 0.15|*y_pentane* = 0.133|*x_pentane* = 0.168|
 |*z_hexane* = 0.45 |*y_hexane* = 0.191 |*x_hexane* = 0.713 |
 
+## More examples
+
+There is a Jupyter Notebook renderer with two additional examples. You are able
+of read it
+[here](https://nbviewer.jupyter.org/github/oscarcontrerasnavas/ideal-distillation-solver/blob/master/examples.ipynb)
+
+
 ## Mathematical Background
 
 [Post in my blog](https://oscarcontrerasnavas.github.io/ideal-multicomponent-solver-and-maths/)
