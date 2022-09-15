@@ -84,8 +84,3 @@ liquid = flash.liquid
 There is a Jupyter Notebook renderer with two additional examples. You are able
 of read it
 [here](https://nbviewer.jupyter.org/github/oscarcontrerasnavas/ideal-distillation-solver/blob/master/examples.ipynb)
-
-
-## Mathematical Background
-
-[Post in my blog](https://oscarcontrerasnavas.github.io/ideal-multicomponent-solver-and-maths/)
